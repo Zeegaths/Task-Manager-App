@@ -1,0 +1,1 @@
+This is a task manager app. It allows a user to keep track of their tasks; add, delete and update tasks.
