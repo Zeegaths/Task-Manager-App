@@ -17,6 +17,15 @@ function addTask(){
     saveData();
 }
 
+function handleKeyPress(event) {
+    if (event.key === "Enter") {
+        addTask();
+    }
+}
+
+// Listen for keypress events on the input box
+inputBox.addEventListener("keypress", handleKeyPress);
+
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === 'LI'){
         e.target.classList.toggle("checked");
@@ -29,8 +38,9 @@ listContainer.addEventListener("click", function(e){
 }, false);
 
 function saveData(){
-    localStorage.setItem("data", listContainer.InnerHTML);
+    localStorage.setItem("data", listContainer.innerHTML);
 }
+
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
